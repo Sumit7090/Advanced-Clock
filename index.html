@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="clock-container">
+        <h1>Digital Clock</h1>
+
+        <div class="tabs">
+            <button onclick="showTab('clock',this)" class="active">Clock</button>
+            <button onclick="showTab('stopwatch',this)">Stopwatch</button>
+            <button onclick="showTab('alarm',this)">Alarm</button>
+            <button onclick="showTab('timer',this)">Timer</button>
+        </div>
+
+        <section id="clock" class="panel active">
+            <div id="time">00:00:00</div>
+            <div id="ampm">AM</div>
+            <div id="date"></div>
+
+            <div class="buttons">
+                <button onclick="startClock()">Start</button>
+                <button onclick="stopClock()">Stop</button>
+                <button onclick="toggleFormat()">12/24 H</button>
+                <button onclick="toggleTheme()">Theme</button>
+            </div>
+        </section>
+
+        <section id="stopwatch" class="panel">
+            <div id="stopwatchDisplay">00:00:00</div>
+            <div id="milliseconds">00</div>
+
+            <div class="buttons">
+                <button onclick="startStopwatch()">Start</button>
+                <button onclick="pauseStopwatch()">Pause</button>
+                <button onclick="resetStopwatch()">Reset</button>
+            </div>
+        </section>
+
+        <section id="alarm" class="panel">
+            <h2>Set Alarm</h2>
+            <input type="time" id="alarmTime">
+
+            <div class="buttons">
+                <button onclick="setAlarm()">Set Alarm</button>
+                <button onclick="cancelAlarm()">Cancel</button>
+                <button onclick="dismissAlarm()">Dismiss</button>
+            </div>
+
+            <p id="alarmStatus">No alarm set</p>
+        </section>
+
+        <section id="timer" class="panel">
+            <h2>Set Timer</h2>
+
+            <div class="timer-inputs">
+                <input type="number" id="hours" placeholder="HH" min="0">
+                <input type="number" id="minutes" placeholder="MM" min="0" max="59">
+                <input type="number" id="seconds" placeholder="SS" min="0" max="59">
+            </div>
+
+            <div id="timerDisplay">00:00:00</div>
+
+            <div class="buttons">
+                <button onclick="startTimer()">Start</button>
+                <button onclick="pauseTimer()">Pause</button>
+                <button onclick="resetTimer()">Reset</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

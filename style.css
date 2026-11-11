@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    font-family: Arial, sans-serif;
+    transition: 0.4s;
+    padding: 15px;
+}
+
+.clock-container {
+    width: 90%;
+    max-width: 450px;
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    color: white;
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 10px 4px;
+    font-size: 13px;
+}
+
+.tabs button.active {
+    background: white;
+}
+
+.panel {
+    display: none;
+}
+
+.panel.active {
+    display: block;
+}
+
+#time,
+#stopwatchDisplay,
+#timerDisplay {
+    font-size: 45px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#ampm,
+#milliseconds {
+    font-size: 20px;
+    margin: 10px;
+}
+
+#date {
+    font-size: 17px;
+    margin: 20px 0 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #00c6ff;
+    color: #111;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+}
+
+input {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    text-align: center;
+    margin: 15px 3px;
+}
+
+#alarmTime {
+    width: 75%;
+}
+
+.timer-inputs input {
+    width: 75px;
+}
+
+.light {
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+
+.light .clock-container {
+    background: rgba(255,255,255,0.8);
+    color: #222;
+}
+
+@media(max-width: 400px) {
+    #time,
+    #stopwatchDisplay,
+    #timerDisplay {
+        font-size: 34px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
